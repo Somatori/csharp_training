@@ -13,6 +13,7 @@ namespace WebAddressbookTests
         public void ContactCreationTest()
         {
             ContactData contact = new ContactData("John", "Johnson");
+
             app.Contacts.Create(contact);
             app.Auth.Logout();
         }

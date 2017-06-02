@@ -15,7 +15,6 @@ namespace WebAddressbookTests
         {
         }
 
-
         public GroupHelper Create(GroupData groop)
         {
             manager.Navigator.GoToGroupsPage();
@@ -27,7 +26,16 @@ namespace WebAddressbookTests
             return this;
         }
 
-        
+        public GroupHelper Remove(int v)
+        {
+            manager.Navigator.GoToGroupsPage();
+            SelectGroup(1);
+            RemoveGroup();
+            ReturnToGroupsPage();
+            return this;
+        }
+
+
         public GroupHelper ReturnToGroupsPage()
         {
             driver.FindElement(By.LinkText("group page")).Click();
