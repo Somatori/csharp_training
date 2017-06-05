@@ -34,7 +34,6 @@ namespace WebAddressbookTests
             FillGroupForm(newData);
             SubmitGroupModification();
             ReturnToGroupsPage();
-
             return this;
         }
 
