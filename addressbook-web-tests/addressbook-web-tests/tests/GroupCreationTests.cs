@@ -17,7 +17,7 @@ namespace WebAddressbookTests
             groop.Footer = "fff";
 
             app.Groups.Create(groop);
-            app.Auth.Logout();
+            // app.Auth.Logout();
         }
 
         [Test]
@@ -28,7 +28,7 @@ namespace WebAddressbookTests
             groop.Footer = "";
 
             app.Groups.Create(groop);
-            app.Auth.Logout();
+            // app.Auth.Logout();
         }
     }
 }
