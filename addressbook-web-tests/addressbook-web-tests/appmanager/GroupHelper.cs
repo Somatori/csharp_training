@@ -18,7 +18,6 @@ namespace WebAddressbookTests
         public GroupHelper Create(GroupData groop)
         {
             manager.Navigator.GoToGroupsPage();
-
             InitGroupCreation();
             FillGroupForm(groop);
             SubmitGroupCreation();
