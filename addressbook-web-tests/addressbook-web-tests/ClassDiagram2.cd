@@ -13,7 +13,7 @@
   <Class Name="WebAddressbookTests.GroupCreationTests" Collapsed="true">
     <Position X="2.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAgAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>tests\GroupCreationTests.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -41,7 +41,7 @@
   <Class Name="WebAddressbookTests.ContactHelper" Collapsed="true">
     <Position X="6.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAIAAACAAEAAAAAAAABAAAAgAAAEAAAAAYAAAAAgA=</HashCode>
+      <HashCode>AABAIAAACAAEAAAAAAAABAAAAgAAAECAEAAYAAAAAgA=</HashCode>
       <FileName>appmanager\ContactHelper.cs</FileName>
     </TypeIdentifier>
   </Class>

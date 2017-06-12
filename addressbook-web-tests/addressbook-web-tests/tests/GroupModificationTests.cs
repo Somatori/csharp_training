@@ -13,6 +13,15 @@ namespace WebAddressbookTests
         [Test]
         public void GroupModificationTest()
         {
+            if (!app.Groups.IsAnyGroupPresent())
+            {
+                GroupData groop = new GroupData("aaa");
+                groop.Header = "ddd";
+                groop.Footer = "fff";
+
+                app.Groups.Create(groop);
+            }
+
             GroupData newData = new GroupData("zzz");
             newData.Header = null;
             newData.Footer = null;
