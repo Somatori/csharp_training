@@ -98,5 +98,23 @@ namespace WebAddressbookTests
             manager.Navigator.GoToHomePage();
             return IsElementPresent(By.Name("selected[]"));
         }
+
+        public List<ContactData> GetContactList()
+        {
+            List<ContactData> contacts = new List<ContactData>();
+
+            manager.Navigator.GoToHomePage();
+            ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("tr[name='entry']"));
+            //ICollection<IWebElement> contactLastNames = driver.FindElements(By.XPath("//tr[@name='entry']/td[2]"));
+            //ICollection<IWebElement> contactFirstNames = driver.FindElements(By.XPath("//tr[@name='entry']/td[3]"));
+
+            foreach (IWebElement element in elements)
+            {
+                contacts.Add(new ContactData(element.Text, null));
+                //System.Console.Out.Write(element.Text + null + "\n");
+            }
+
+            return contacts;
+        }
     }
 }
