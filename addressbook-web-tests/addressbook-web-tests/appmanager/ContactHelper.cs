@@ -63,7 +63,7 @@ namespace WebAddressbookTests
 
         public ContactHelper SelectContact(int index)
         {
-            driver.FindElement(By.XPath("(//input[@name='selected[]'])[" + index + "]")).Click();
+            driver.FindElement(By.XPath("(//input[@name='selected[]'])[" + (index + 1) + "]")).Click();
             return this;
         }
 
@@ -110,8 +110,10 @@ namespace WebAddressbookTests
 
             foreach (IWebElement element in elements)
             {
-                contacts.Add(new ContactData(element.Text, null));
-                //System.Console.Out.Write(element.Text + null + "\n");
+                IList<IWebElement> cells = element.FindElements(By.TagName("td"));                 
+
+                contacts.Add(new ContactData(cells[2].Text, cells[1].Text));
+                //System.Console.Out.Write(cells[2].Text + cells[1].Text + "\n");
             }
 
             return contacts;

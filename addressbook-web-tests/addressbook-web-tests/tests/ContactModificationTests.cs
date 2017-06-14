@@ -22,7 +22,7 @@ namespace WebAddressbookTests
 
             ContactData newData = new ContactData("Robert", "Robertson");
 
-            app.Contacts.Modify(1, newData);
+            app.Contacts.Modify(0, newData);
         }
     }
 }
