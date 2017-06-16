@@ -61,12 +61,9 @@ namespace WebAddressbookTests
 
         public ContactHelper InitContactModification(int index)
         {
-            IList<IWebElement> elements = driver.FindElements(By.XPath("//img[@alt='Edit']"));
-            elements[index + 1].Click();
-
-            //driver.FindElement(By.XPath("(//img[@alt='edit'])[" + (index + 1) + "]")).Click();
-            //driver.FindElement(By.XPath("(//img[@alt='EDIT'])[" + (v + 1) + "]")).Click();
-
+            //IList<IWebElement> elements = driver.FindElements(By.XPath("//img[@alt='Edit']"));
+            //elements[index].Click();
+            driver.FindElement(By.XPath("(//img[@alt='Edit'])[" + (index + 1) + "]")).Click();
             return this;
         }
 
