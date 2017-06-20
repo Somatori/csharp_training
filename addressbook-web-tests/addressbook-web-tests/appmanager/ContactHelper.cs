@@ -119,8 +119,11 @@ namespace WebAddressbookTests
                 {
                     IList<IWebElement> cells = element.FindElements(By.TagName("td"));
 
-                    contactCache.Add(new ContactData(cells[2].Text, cells[1].Text));
-                    //System.Console.Out.Write(cells[2].Text + cells[1].Text + "\n");
+                    contactCache.Add(new ContactData(cells[2].Text, cells[1].Text)
+                    {
+                        Id = element.FindElement(By.TagName("input")).GetAttribute("value")
+                    });
+                    //System.Console.Out.Write(cells[2].Text + cells[1].Text + ", id=" + contact.Id + "\n");
                 }
             }
 
