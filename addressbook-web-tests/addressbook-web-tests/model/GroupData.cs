@@ -13,6 +13,15 @@ namespace WebAddressbookTests
             Name = name;
         }
 
+        public string Id { get; set; }
+
+        public string Name { get; set; }
+
+        public string Header { get; set; }
+
+        public string Footer { get; set; }
+
+
         public bool Equals(GroupData other)
         {
             if (Object.ReferenceEquals(other, null))
@@ -47,14 +56,5 @@ namespace WebAddressbookTests
 
             return Name.CompareTo(other.Name);
         }
-
-
-        public string Name { get; set; }
-
-        public string Header { get; set; }
-
-        public string Footer { get; set; }
-
-        public string Id { get; set; }
     }
 }
