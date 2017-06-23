@@ -67,6 +67,14 @@ namespace WebAddressbookTests
             return this;
         }
 
+        public ContactHelper OpenContactViewPage(int index)
+        {
+            //IList<IWebElement> elements = driver.FindElements(By.XPath("//img[@alt='Edit']"));
+            //elements[index].Click();
+            driver.FindElement(By.XPath("(//img[@alt='Details'])[" + (index + 1) + "]")).Click();
+            return this;
+        }
+
         public ContactHelper SelectContact(int index)
         {
             driver.FindElement(By.XPath("(//input[@name='selected[]'])[" + (index + 1) + "]")).Click();
@@ -150,7 +158,15 @@ namespace WebAddressbookTests
                 Address = address,
                 AllPhones = allPhones
             };
+        }
 
+        public string GetContactInformationFromViewPage(int index)
+        {
+            manager.Navigator.GoToHomePage();
+            OpenContactViewPage(index);
+            string content = driver.FindElement(By.Id("content")).Text;
+            //System.Console.Out.Write(content);
+            return content;
 
         }
 
@@ -172,6 +188,52 @@ namespace WebAddressbookTests
                 MobilePhone = mobilePhone,
                 WorkPhone = workPhone
             };
+        }
+
+        public string GetContactTextInformationFromEditForm(ContactData contact)
+        {
+            string fullName = null;
+            string address = null;
+            string homePhone = null;
+            string mobilePhone = null;
+            string workPhone = null;
+
+            if (contact.FirstName.Length == 0 && contact.LastName.Length == 0)
+            {
+                fullName = null;
+            }
+            else
+            {
+                fullName = (contact.FirstName + " " + contact.LastName).Trim() + "\r\n";
+            }
+
+            if (contact.Address.Length == 0)
+            {
+                address = "\r\n";
+            }
+            else
+            {
+                address = contact.Address + "\r\n\r\n";
+            }
+
+            if (contact.HomePhone.Length != 0)
+            {
+                homePhone = "H: " + contact.HomePhone + "\r\n";
+            }
+
+            if (contact.MobilePhone.Length != 0)
+            {
+                mobilePhone = "M: " + contact.MobilePhone + "\r\n";
+            }
+
+            if (contact.WorkPhone.Length != 0)
+            {
+                workPhone = "W: " + contact.WorkPhone +"\r\n";
+            }
+            
+            string contactContent = (fullName + address + homePhone + mobilePhone + workPhone).Trim();
+            //System.Console.Out.Write(contactContent);
+            return contactContent;
         }
     }
 }
