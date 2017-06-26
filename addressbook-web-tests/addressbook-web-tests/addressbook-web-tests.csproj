@@ -81,6 +81,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram2.cd" />
+    <None Include="contacts.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="groups.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

@@ -40,11 +40,11 @@ namespace WebAddressbookTests
                     Header = parts[1],
                     Footer = parts[2]
                 });
-            }
-            
+            }            
 
             return groups;
         }
+
 
         [Test, TestCaseSource("GroupDataFromFile")]
         public void GroupCreationTest(GroupData group)
