@@ -8,7 +8,7 @@ using LinqToDB.Mapping;
 namespace WebAddressbookTests
 {
 
-    [Table(Name = "group _list")]
+    [Table(Name = "group_list")]
     public class GroupData : IEquatable<GroupData>, IComparable<GroupData>
     {
         public GroupData()
@@ -31,6 +31,14 @@ namespace WebAddressbookTests
 
         [Column(Name = "group_footer")]
         public string Footer { get; set; }
+
+        public static List<GroupData> GetAll()
+        {
+            using (AddresBookDB db = new AddresBookDB())
+            {
+                return (from g in db.Groups select g).ToList();
+            }
+        }
 
 
         public bool Equals(GroupData other)
